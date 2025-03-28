@@ -7,7 +7,7 @@ const mockUser = {
     name: 'Clark Kent',
     email: 'clark@superman.com',
     password: 'Krypt()n8',
-    preferences:['movies', 'comics']
+    preferences:['movies', 'comics', 'games']
 };
 
 let token = '';
@@ -16,7 +16,7 @@ let token = '';
 
 tap.test('POST /users/signup', async (t) => { 
     const response = await server.post('/users/signup').send(mockUser);
-    t.equal(response.status, 200);
+    t.equal(response.status, 201); 
     t.end();
 });
 
